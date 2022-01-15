@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/main_nav">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/folderListFragment">
 
+    <fragment
+        android:id="@+id/folderListFragment"
+        android:name="com.flamyoad.loopingvideoplayer.ui.folder_list.FolderListFragment"
+        android:label="FolderListFragment" >
+        <action
+            android:id="@+id/action_folderListFragment_to_videoListFragment"
+            app:destination="@id/videoListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoListFragment"
+        android:name="com.flamyoad.loopingvideoplayer.ui.video_list.VideoListFragment"
+        android:label="VideoListFragment" >
+        <argument
+            android:name="bucketId"
+            app:argType="string" />
+    </fragment>
 </navigation>

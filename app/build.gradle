@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -81,4 +82,12 @@ dependencies {
 // Allow references to generated code
 kapt {
     correctErrorTypes = true
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs += 'build/generated/source/navigation-args'
+        }
+    }
 }

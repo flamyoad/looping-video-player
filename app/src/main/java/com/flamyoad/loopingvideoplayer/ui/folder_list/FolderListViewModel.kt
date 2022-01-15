@@ -18,6 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class FolderListViewModel @Inject constructor(
     private val folderRepository: FolderRepository,
+    private val savedState: SavedStateHandle,
     @DefaultDispatcher private val dispatcher: CoroutineDispatcher,
 ) : BaseViewModel() {
 

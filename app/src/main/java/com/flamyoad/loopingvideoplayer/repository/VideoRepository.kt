@@ -4,6 +4,6 @@ import com.flamyoad.loopingvideoplayer.model.Video
 import kotlinx.coroutines.flow.Flow
 
 interface VideoRepository {
-    fun getVideos(folderName: String): Flow<List<Video>>
+    fun getVideos(bucketId: String): Flow<List<Video>> // shud replace with bucketid
     fun refresh()
 }

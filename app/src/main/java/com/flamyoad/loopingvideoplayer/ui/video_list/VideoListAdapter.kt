@@ -1,4 +1,4 @@
-package com.flamyoad.loopingvideoplayer.ui.folder_list
+package com.flamyoad.loopingvideoplayer.ui.video_list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,26 +8,28 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.flamyoad.loopingvideoplayer.R
 import com.flamyoad.loopingvideoplayer.databinding.ListFolderItemBinding
+import com.flamyoad.loopingvideoplayer.databinding.ListVideoItemBinding
 import com.flamyoad.loopingvideoplayer.model.Folder
+import com.flamyoad.loopingvideoplayer.model.Video
 
-class FolderListAdapter(private val onClickListener: OnClickListener) :
-    ListAdapter<Folder, FolderListAdapter.FolderViewHolder>(COMPARATOR) {
+class VideoListAdapter(private val onClickListener: OnClickListener) :
+    ListAdapter<Video, VideoListAdapter.VideoViewHolder>(COMPARATOR) {
 
     interface OnClickListener {
-        fun onFolderClick(folder: Folder)
+        fun onVideoClick(folder: Folder)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FolderViewHolder {
-        val binding = DataBindingUtil.inflate<ListFolderItemBinding>(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoViewHolder {
+        val binding = DataBindingUtil.inflate<ListVideoItemBinding>(
             LayoutInflater.from(parent.context),
-            R.layout.list_folder_item,
+            R.layout.list_video_item,
             parent,
             false
         )
-        return FolderViewHolder(binding)
+        return VideoViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: FolderViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {
         if (position == RecyclerView.NO_POSITION) return
         with(holder.binding) {
             obj = getItem(position)
@@ -36,16 +38,16 @@ class FolderListAdapter(private val onClickListener: OnClickListener) :
         }
     }
 
-    inner class FolderViewHolder(val binding: ListFolderItemBinding) :
+    inner class VideoViewHolder(val binding: ListVideoItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     companion object {
-        private val COMPARATOR = object : DiffUtil.ItemCallback<Folder>() {
-            override fun areItemsTheSame(oldItem: Folder, newItem: Folder): Boolean {
+        private val COMPARATOR = object : DiffUtil.ItemCallback<Video>() {
+            override fun areItemsTheSame(oldItem: Video, newItem: Video): Boolean {
                 return oldItem == newItem
             }
 
-            override fun areContentsTheSame(oldItem: Folder, newItem: Folder): Boolean {
+            override fun areContentsTheSame(oldItem: Video, newItem: Video): Boolean {
                 return oldItem == newItem
             }
         }
