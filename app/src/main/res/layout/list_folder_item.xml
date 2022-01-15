@@ -3,19 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="obj"
+            type="com.flamyoad.loopingvideoplayer.model.Folder" />
+
+        <variable
+            name="listener"
+            type="com.flamyoad.loopingvideoplayer.ui.folder_list.FolderListAdapter.OnClickListener" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/list_folder_item_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true">
+        android:layout_height="wrap_content"
+        android:paddingVertical="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> listener.onFolderClick(obj)}">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_folder_24" />
@@ -30,6 +41,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView"
+            android:text="@{obj.name}"
             tools:text="Movies" />
 
         <TextView
@@ -44,7 +56,4 @@
             tools:text="14 videos" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <data>
-
-    </data>
 </layout>

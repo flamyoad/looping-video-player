@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/LoopingVideoPlayer/app/src/main/res/layout/activity_entry_point.xml" value="0.11574074074074074" />
         <entry key="..\:/LoopingVideoPlayer/app/src/main/res/layout/activity_main.xml" value="0.2421875" />
-        <entry key="..\:/LoopingVideoPlayer/app/src/main/res/layout/list_folder_item.xml" value="0.4" />
+        <entry key="..\:/LoopingVideoPlayer/app/src/main/res/layout/error_indicator.xml" value="0.2421875" />
+        <entry key="..\:/LoopingVideoPlayer/app/src/main/res/layout/fragment_folder_list.xml" value="0.2421875" />
+        <entry key="..\:/LoopingVideoPlayer/app/src/main/res/layout/list_empty_indicator.xml" value="0.2421875" />
+        <entry key="..\:/LoopingVideoPlayer/app/src/main/res/layout/list_folder_item.xml" value="0.28935185185185186" />
       </map>
     </option>
   </component>

@@ -12,5 +12,5 @@ import dagger.hilt.components.SingletonComponent
 interface AppModule {
 
     @Binds
-    fun bindfolderRepository(folderRepositoryImpl: FolderRepositoryImpl): FolderRepository
+    fun bindFolderRepository(folderRepositoryImpl: FolderRepositoryImpl): FolderRepository
 }
