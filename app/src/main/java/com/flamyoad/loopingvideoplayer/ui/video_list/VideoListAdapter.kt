@@ -16,7 +16,7 @@ class VideoListAdapter(private val onClickListener: OnClickListener) :
     ListAdapter<Video, VideoListAdapter.VideoViewHolder>(COMPARATOR) {
 
     interface OnClickListener {
-        fun onVideoClick(folder: Folder)
+        fun onVideoClick(video: Video)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoViewHolder {

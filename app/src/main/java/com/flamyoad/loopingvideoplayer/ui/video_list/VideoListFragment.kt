@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.flamyoad.loopingvideoplayer.R
 import com.flamyoad.loopingvideoplayer.databinding.FragmentVideoListBinding
 import com.flamyoad.loopingvideoplayer.model.Folder
+import com.flamyoad.loopingvideoplayer.model.Video
 import com.flamyoad.loopingvideoplayer.ui.folder_list.FolderListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,7 +28,7 @@ class VideoListFragment : Fragment(), VideoListAdapter.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_video_list, container, false)
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.vm = viewModel
         return binding.root
     }
@@ -40,7 +42,11 @@ class VideoListFragment : Fragment(), VideoListAdapter.OnClickListener {
         }
     }
 
-    override fun onVideoClick(folder: Folder) {
-
+    override fun onVideoClick(video: Video) {
+        findNavController().navigate(
+            VideoListFragmentDirections.actionVideoListFragmentToVideoPlayerFragment(
+                videoUri = video.videoUri
+            )
+        )
     }
 }

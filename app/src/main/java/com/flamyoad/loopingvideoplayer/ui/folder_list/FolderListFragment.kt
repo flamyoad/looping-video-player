@@ -27,7 +27,7 @@ class FolderListFragment : BaseFragment(), FolderListAdapter.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_folder_list, container, false)
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.vm = viewModel
         return binding.root
     }
@@ -44,7 +44,7 @@ class FolderListFragment : BaseFragment(), FolderListAdapter.OnClickListener {
     override fun onFolderClick(folder: Folder) {
         findNavController().navigate(
             FolderListFragmentDirections.actionFolderListFragmentToVideoListFragment(
-                folder.bucketId
+                bucketId = folder.bucketId
             )
         )
     }

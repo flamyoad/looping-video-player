@@ -49,8 +49,6 @@ class VideoRepositoryImpl @Inject constructor(
             while (cursor.moveToNext()) {
                 val name = cursor.getStringOrNull(nameColumn) ?: continue
                 val id = cursor.getLongOrNull(idColumn) ?: continue
-//                 This is because the cursor searches for video items which may share the same directory
-//                 So if a folder has been found once, skip it
                 if (videoList.any { it.name == name }) {
                     continue
                 }

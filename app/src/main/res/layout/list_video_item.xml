@@ -16,7 +16,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/list_video_list_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{() -> listener.onVideoClick(obj)}">
 
         <ImageView
             android:id="@+id/list_video_list_imageview"
