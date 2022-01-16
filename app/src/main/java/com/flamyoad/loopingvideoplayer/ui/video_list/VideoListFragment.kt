@@ -1,7 +1,6 @@
 package com.flamyoad.loopingvideoplayer.ui.video_list
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,14 +9,13 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.flamyoad.loopingvideoplayer.R
+import com.flamyoad.loopingvideoplayer.base.BaseFragment
 import com.flamyoad.loopingvideoplayer.databinding.FragmentVideoListBinding
-import com.flamyoad.loopingvideoplayer.model.Folder
 import com.flamyoad.loopingvideoplayer.model.Video
-import com.flamyoad.loopingvideoplayer.ui.folder_list.FolderListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class VideoListFragment : Fragment(), VideoListAdapter.OnClickListener {
+class VideoListFragment : BaseFragment(), VideoListAdapter.OnClickListener {
 
     private val viewModel: VideoListViewModel by viewModels()
 

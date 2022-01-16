@@ -42,10 +42,6 @@ class VideoPlayerFragment : BaseVideoPlayerFragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     private fun initPlayer() {
         _player = ExoPlayer.Builder(requireContext()).build().also {
             binding.playerView.player = it
