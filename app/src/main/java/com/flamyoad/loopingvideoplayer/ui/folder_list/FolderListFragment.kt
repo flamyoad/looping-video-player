@@ -44,7 +44,8 @@ class FolderListFragment : BaseFragment(), FolderListAdapter.OnClickListener {
     override fun onFolderClick(folder: Folder) {
         findNavController().navigate(
             FolderListFragmentDirections.actionFolderListFragmentToVideoListFragment(
-                bucketId = folder.bucketId
+                bucketId = folder.bucketId,
+                folderName = folder.name,
             )
         )
     }

@@ -37,23 +37,24 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
+            android:text="@{obj.name}"
             android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView"
-            android:text="@{obj.name}"
             tools:text="Movies" />
 
-        <TextView
-            android:id="@+id/list_folder_item_count_textview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/list_folder_item_title_textview"
-            app:layout_constraintStart_toStartOf="@+id/list_folder_item_title_textview"
-            app:layout_constraintTop_toBottomOf="@+id/list_folder_item_title_textview"
-            tools:text="14 videos" />
+<!--        <TextView-->
+<!--            android:id="@+id/list_folder_item_count_textview"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:textSize="12sp"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/list_folder_item_title_textview"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/list_folder_item_title_textview"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/list_folder_item_title_textview"-->
+<!--            tools:text="14 videos" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

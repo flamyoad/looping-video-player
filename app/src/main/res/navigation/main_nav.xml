@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/folderListFragment"
         android:name="com.flamyoad.loopingvideoplayer.ui.folder_list.FolderListFragment"
-        android:label="FolderListFragment" >
+        android:label="Directories" >
         <action
             android:id="@+id/action_folderListFragment_to_videoListFragment"
             app:destination="@id/videoListFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/videoListFragment"
         android:name="com.flamyoad.loopingvideoplayer.ui.video_list.VideoListFragment"
-        android:label="VideoListFragment" >
+        android:label="{folderName}" >
         <argument
             android:name="bucketId"
             app:argType="string" />
@@ -26,6 +26,9 @@
             app:destination="@id/videoPlayerFragment"
             app:enterAnim="@anim/nav_default_pop_enter_anim"
             app:exitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="folderName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/videoPlayerFragment"
