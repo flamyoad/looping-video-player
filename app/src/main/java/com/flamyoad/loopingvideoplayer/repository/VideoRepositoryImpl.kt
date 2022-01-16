@@ -43,7 +43,6 @@ class VideoRepositoryImpl @Inject constructor(
 
         val videoList = mutableListOf<Video>()
         query?.use { cursor ->
-            DatabaseUtils.dumpCursor(cursor)
             val idColumn = cursor.getColumnIndexOrThrow(MediaStore.Video.VideoColumns._ID)
             val nameColumn = cursor.getColumnIndexOrThrow(MediaStore.Video.VideoColumns.DISPLAY_NAME)
             while (cursor.moveToNext()) {
