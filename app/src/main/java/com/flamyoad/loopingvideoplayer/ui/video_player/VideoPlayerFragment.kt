@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.flamyoad.loopingvideoplayer.R
@@ -17,7 +16,7 @@ import com.google.android.exoplayer2.Player
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class VideoPlayerFragment : Fragment() {
+class VideoPlayerFragment : BaseVideoPlayerFragment() {
 
     private lateinit var binding: FragmentVideoPlayerBinding
 
