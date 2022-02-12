@@ -15,7 +15,7 @@ annotation class MediaStorageCollection
 
 @Module
 @InstallIn(SingletonComponent::class)
-class MediaStorageModule {
+object MediaStorageModule {
 
     @Provides
     @MediaStorageCollection

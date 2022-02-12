@@ -80,6 +80,8 @@ dependencies {
 
     implementation 'com.google.android.exoplayer:exoplayer:2.16.1'
 
+    implementation "androidx.datastore:datastore:$datastore_version"
+    implementation "androidx.datastore:datastore-preferences:$datastore_version"
 }
 
 // Allow references to generated code
