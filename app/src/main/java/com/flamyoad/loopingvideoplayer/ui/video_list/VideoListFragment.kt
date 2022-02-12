@@ -40,11 +40,5 @@ class VideoListFragment : BaseFragment(), VideoListAdapter.OnClickListener {
         }
     }
 
-    override fun onVideoClick(video: Video) {
-        findNavController().navigate(
-            VideoListFragmentDirections.actionVideoListFragmentToVideoPlayerFragment(
-                videoUri = video.videoUri
-            )
-        )
-    }
+    override fun onVideoClick(video: Video) = navigator.toVideoPlayer(video)
 }
